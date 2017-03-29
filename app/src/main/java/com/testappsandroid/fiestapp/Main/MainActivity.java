@@ -1,7 +1,9 @@
-package com.testappsandroid.fiestapp;
+package com.testappsandroid.fiestapp.Main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.testappsandroid.fiestapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
