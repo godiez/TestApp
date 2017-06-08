@@ -3,4 +3,7 @@
     <string name="hint_email">Enter your e-mail</string>
     <string name="hint_pwd">Password</string>
     <string name="btn_login">LOGIN</string>
+
+    <string name="app_profile_title">Profile</string>
+    <string name="profile_name">Profile name</string>
 </resources>
