@@ -4,6 +4,17 @@
     <string name="hint_pwd">Password</string>
     <string name="btn_login">LOGIN</string>
 
+    <!--Profile-->
     <string name="app_profile_title">Profile</string>
-    <string name="profile_name">Profile name</string>
+    <string name="bProfile">Profile</string>
+    <string name="bMessages">Messages</string>
+    <string name="bContacts">Contacts</string>
+    <string name="bPlaces">Places</string>
+    <string name="bExit">Exit</string>
+
+    <!--Profile button-->
+    <string name="tUserName">UserName</string>
+    <string name="tAge">Age</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
