@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/idContentLayout"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.testappsandroid.fiestapp.Main.Profile.ProfileActivity">
+    tools:context="com.testappsandroid.fiestapp.Main.Main.MainActivity">
 
 
     <!--Profile Menu-->
     <LinearLayout
-        android:id="@+id/idProfileLayout"
+        android:id="@+id/buttonsMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -45,10 +45,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/bExit" />
-
-
     </LinearLayout>
 
-    <include layout="@layout/profile_content"/>
+    <!--Include XML's of menu buttons-->
+    <RelativeLayout
+        android:id="@+id/contentOptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/profile_content"/>
+
+        <include
+            layout="@layout/messages_content"/>
+    </RelativeLayout>
 
 </LinearLayout>

@@ -17,4 +17,7 @@
     <string name="tAge">Age</string>
 
     <string name="action_settings">Settings</string>
+
+    <!--Testing-->
+    <string name="test"></string>
 </resources>

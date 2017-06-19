@@ -1,7 +1,6 @@
 package com.testappsandroid.fiestapp.Main.Login;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.testappsandroid.fiestapp.Main.Profile.ProfileActivity;
+import com.testappsandroid.fiestapp.Main.Main.MainActivity;
 import com.testappsandroid.fiestapp.R;
 
 
@@ -27,10 +26,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //Firebase
     private FirebaseAuth mAuth;
 
-
     //Views
     private EditText tEmail;
     private EditText tPassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,8 +114,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Toast.makeText(LoginActivity.this, "Authentication succeeded.",
                                     Toast.LENGTH_LONG).show();
                             Log.d(TAG, "user: " + user.getEmail());
-                            Intent i = new Intent(LoginActivity.this, ProfileActivity.class);
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             i.putExtra("tProfileName", user.getEmail());
+                            i.putExtra("UID", user.getUid());
                             startActivity(i);
 
 
