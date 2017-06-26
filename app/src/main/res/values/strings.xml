@@ -1,22 +1,29 @@
 <resources>
     <string name="app_name">FiestApp</string>
+
+    <!--Login-->
     <string name="hint_email">Enter your e-mail</string>
     <string name="hint_pwd">Password</string>
     <string name="btn_login">LOGIN</string>
+    <string name="tForgotPassword">Forgot password?</string>
 
     <!--Profile-->
-    <string name="app_profile_title">Profile</string>
     <string name="bProfile">Profile</string>
-    <string name="bMessages">Messages</string>
-    <string name="bContacts">Contacts</string>
-    <string name="bPlaces">Places</string>
-    <string name="bExit">Exit</string>
-
-    <!--Profile button-->
     <string name="tUserName">UserName</string>
     <string name="tAge">Age</string>
 
-    <string name="action_settings">Settings</string>
+    <!--Messages-->
+    <string name="bMessages">Messages</string>
+
+    <!--Contacts-->
+    <string name="bContacts">Contacts</string>
+
+    <!--Places-->
+    <string name="bPlaces">Places</string>
+
+    <!--Exit-->
+    <string name="bExit">Exit</string>
+
 
     <!--Testing-->
     <string name="test"></string>

@@ -29,4 +29,13 @@
         android:id="@+id/bLogin"
         android:text="@string/btn_login"/>
 
+    <TextView
+        android:id="@+id/tForgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:onClick="onClick"
+        android:text="@string/tForgotPassword"
+        android:textColor="@android:color/holo_blue_dark" />
+
 </LinearLayout>

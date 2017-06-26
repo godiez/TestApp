@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText tEmail;
     private EditText tPassword;
 
+    //Textview
+    private TextView tForgotPassword;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //View
         tEmail = (EditText) findViewById(R.id.tEmail);
         tPassword = (EditText) findViewById(R.id.tPassword);
+
+        //TextView
+        tForgotPassword = (TextView)findViewById(R.id.tForgotPassword);
 
     }
 
@@ -93,6 +100,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 //Login with Firebase Auth
                 signIn(tEmail.getText().toString(),tPassword.getText().toString());
                 break;
+            case R.id.tForgotPassword:
+                //Restore password
+                restorePassword(tEmail.getText().toString());
+                break;
         }
     }
 
@@ -129,9 +140,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
     }
+
+    private void restorePassword(String email){
+        if(!validateEmailRestore()){
+            return;
+        }
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "Email sent!",
+                            Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Log.d(TAG, task.getException().getMessage());
+                    Toast.makeText(LoginActivity.this, "Restore password failed. Invalid email",
+                            Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+        });
+    }
+
     private boolean validateFields(){
         Log.d(TAG, "validateFields function");
         return (!TextUtils.isEmpty(tEmail.getText().toString()) && !TextUtils.isEmpty(tPassword.getText().toString()));
+    }
+
+    private boolean validateEmailRestore(){
+        Log.d(TAG, "validateEmailRestore function");
+        return (!TextUtils.isEmpty(tEmail.getText().toString()));
     }
 
 

@@ -55,8 +55,11 @@
 
         <include layout="@layout/profile_content"/>
 
-        <include
-            layout="@layout/messages_content"/>
+        <include layout="@layout/messages_content"/>
+
+        <include layout="@layout/contacts_content"/>
+
+        <include layout="@layout/places_content"/>
     </RelativeLayout>
 
 </LinearLayout>
